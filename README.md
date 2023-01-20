@@ -13,6 +13,10 @@
 
 ##### Plugins
 - Plugin Manager: [Lazy.nvim](https://github.com/folke/lazy.nvim)
+- Colorscheme
+  - [kanagawa](https://github.com/rebelot/kanagawa.nvim)
+  - [onedark](https://github.com/navarasu/onedark.nvim)
+  - [tokyonight](https://github.com/tiagovla/tokyodark.nvim)
 - LSP:
   - [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim)
   - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
@@ -50,9 +54,5 @@
   - [barbar](https://github.com/romgrk/barbar.nvim)
   - [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
   - [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-- Colorscheme
-  - [kanagawa](https://github.com/rebelot/kanagawa.nvim)
-  - [onedark](https://github.com/navarasu/onedark.nvim)
-  - [tokyonight](https://github.com/tiagovla/tokyodark.nvim)
   
 
