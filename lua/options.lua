@@ -3,6 +3,13 @@ vim.cmd("set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis")
 
 vim.api.nvim_command("let g:latex_to_unicode_auto = 1")
 
+vim.opt.autowrite = true -- enable auto write
+vim.opt.cmdheight = 1
+vim.opt.confirm = true -- confirm to save changes before exiting modified buffer
+vim.opt.formatoptions = "jcroqlnt" -- tcqj
+vim.opt.grepformat = "%f:%l:%c:%m"
+vim.opt.grepprg = "rg --vimgrep"
+
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true

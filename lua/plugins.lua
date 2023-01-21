@@ -90,5 +90,6 @@ return {
     end,
     ft = { "markdown" },
   },
+  { "lukas-reineke/indent-blankline.nvim" },
 
 }

@@ -53,6 +53,7 @@
   - [markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
   - [github-copilot](https://github.com/github/copilot.vim)
   - [impatient](https://github.com/lewis6991/impatient.nvim)
+  - [nvim-indentline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - UI
   - [lualine](https://github.com/nvim-lualine/lualine.nvim)
   - [barbar](https://github.com/romgrk/barbar.nvim)
