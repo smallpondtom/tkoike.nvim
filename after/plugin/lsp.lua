@@ -1,9 +1,8 @@
--- Learn the keybindings, see :help lsp-zero-keybindings
--- Learn to configure LSP servers, see :help lsp-zero-api-showcase
-local lsp = require('lsp-zero')
-lsp.preset('recommended')
+-- lsp fidget setup --
+require"fidget".setup{}
 
--- (Optional) Configure lua language server for neovim
-lsp.nvim_workspace()
-
-lsp.setup()
+--neodev --
+-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+require("neodev").setup({
+  -- add any options here, or leave empty to use the default settings
+})

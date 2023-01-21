@@ -43,7 +43,8 @@
   - [git-signs](https://github.com/lewis6991/gitsigns.nvim)
 - Improve Editing Experience
   - [undotree](https://github.com/mbbill/undotree)
-  - [vim-surround](https://github.com/tpope/vim-surround)
+  - [nvim-surround](https://github.com/kylechui/nvim-surround)
+  - [nvim-autopair](https://github.com/windwp/nvim-autopairs)
   - [zen-mode](https://github.com/folke/zen-mode.nvim)
   - [harpoon](https://github.com/ThePrimeagen/harpoon)
   - [comment](https://github.com/numToStr/Comment.nvim)

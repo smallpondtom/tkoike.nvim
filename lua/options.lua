@@ -2,7 +2,6 @@ vim.cmd("set encoding=UTF-8")
 vim.cmd("set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis")
 
 vim.api.nvim_command("let g:latex_to_unicode_auto = 1")
-vim.opt.timeoutlen = 500
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -13,7 +12,7 @@ vim.opt.incsearch = true
 vim.opt.wrap = false
 vim.opt.swapfile = false
 
--- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
@@ -33,9 +32,9 @@ vim.opt.iskeyword = vim.opt.iskeyword + "-"
 vim.opt.shortmess = vim.opt.shortmess + "c"
 vim.go.hidden = true
 vim.opt.completeopt = "menuone,noinsert,noselect"
-vim.go.timeoutlen = 100
 vim.opt.colorcolumn = "80"
-vim.opt.updatetime = 100
+-- vim.go.timeoutlen = 100
+-- vim.opt.updatetime = 100
 
 vim.opt.autochdir = true
 vim.cmd("set clipboard+=unnamedplus")
@@ -49,3 +48,5 @@ vim.opt.cursorline = true
 
 vim.cmd("highlight Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold")
 vim.cmd("hi Cursorline guifg=red guibg=blue")
+
+vim.opt.ignorecase = true

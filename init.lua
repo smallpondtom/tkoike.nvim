@@ -55,3 +55,54 @@ require("lazy").setup({
     },
   },
 })
+
+-- Faster loading of Neovim --
+require("impatient")
+
+-- LSP --
+-- -- Learn the keybindings, see :help lsp-zero-keybindings
+-- -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
+-- local lsp = require('lsp-zero')
+-- lsp.preset('recommended')
+--
+-- -- lsp setup --
+-- lsp.setup()
+
+-- Configure LSP servers -- 
+require('lsp-zero').extend_lspconfig()
+
+require('mason').setup()
+require('mason-lspconfig').setup()
+
+local get_servers = require('mason-lspconfig').get_installed_servers
+for _, server_name in ipairs(get_servers()) do
+  require('lspconfig')[server_name].setup({})
+end
+
+-- Diagnostic config --
+require('lsp-zero').set_sign_icons()
+vim.diagnostic.config(require('lsp-zero').defaults.diagnostics({}))
+
+-- Snippet config --
+require('luasnip').config.set_config({
+  region_check_events = 'InsertEnter',
+  delete_check_events = 'InsertLeave'
+})
+
+require('luasnip.loaders.from_vscode').lazy_load()
+
+-- Autocompletion --
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
+local cmp = require('cmp')
+local cmp_config = require('lsp-zero').defaults.cmp_config({})
+
+-- If you want insert `(` after select function or method item --
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
+
+cmp.setup(cmp_config)
+
