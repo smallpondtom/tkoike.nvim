@@ -6,7 +6,6 @@ vim.api.nvim_command("let g:latex_to_unicode_auto = 1")
 vim.opt.autowrite = true -- enable auto write
 vim.opt.cmdheight = 1
 vim.opt.confirm = true -- confirm to save changes before exiting modified buffer
-vim.opt.formatoptions = "jcroqlnt" -- tcqj
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.grepprg = "rg --vimgrep"
 
@@ -57,3 +56,4 @@ vim.cmd("highlight Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white gu
 vim.cmd("hi Cursorline guifg=red guibg=blue")
 
 vim.opt.ignorecase = true
+vim.cmd("set formatoptions-=cro")

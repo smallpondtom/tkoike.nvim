@@ -106,3 +106,7 @@ cmp.event:on(
 
 cmp.setup(cmp_config)
 
+-- Globally Disable continuation of comment to next line --
+vim.api.nvim_command([[
+  autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+]])
