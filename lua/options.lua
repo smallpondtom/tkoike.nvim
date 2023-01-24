@@ -37,7 +37,8 @@ vim.wo.number = true
 vim.opt.iskeyword = vim.opt.iskeyword + "-"
 vim.opt.shortmess = vim.opt.shortmess + "c"
 vim.go.hidden = true
-vim.opt.completeopt = "menuone,noinsert,noselect"
+-- vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}
+
 vim.opt.colorcolumn = "80"
 -- vim.go.timeoutlen = 100
 -- vim.opt.updatetime = 100
@@ -52,8 +53,7 @@ vim.opt.showtabline = 2
 vim.opt.showmode = true
 vim.opt.cursorline = true
 
-vim.cmd("highlight Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold")
-vim.cmd("hi Cursorline guifg=red guibg=blue")
-
+-- vim.cmd("highlight Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold")
 vim.opt.ignorecase = true
 vim.cmd("set formatoptions-=cro")
+
