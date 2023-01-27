@@ -12,7 +12,7 @@ for _, mod in ipairs(modules) do
   end
 end
 
--- Lazy.nvim setup ---
+-- Lazy.nvim setup --- sdfsdfadffs
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -71,8 +71,13 @@ lsp.setup_nvim_cmp({
     completeopt = 'menu,menuone,noinsert,noselect'
   },
 })
-lsp.setup()
 
+lsp.set_preferences({
+  set_lsp_keymaps = {omit = {"gi", "<C-k>"}}
+})
+
+
+lsp.setup()
 
 -- Configure LSP servers -- 
 -- require('lsp-zero').extend_lspconfig()
