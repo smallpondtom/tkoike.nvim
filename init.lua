@@ -79,6 +79,11 @@ lsp.set_preferences({
 
 lsp.setup()
 
+-- Diagnostic virtual text showing --
+vim.diagnostic.config({
+  virtual_text = true,
+})
+
 -- Configure LSP servers -- 
 -- require('lsp-zero').extend_lspconfig()
 --
