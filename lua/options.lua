@@ -4,15 +4,18 @@ vim.cmd("set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis")
 vim.api.nvim_command("let g:latex_to_unicode_auto = 1")
 
 vim.opt.autowrite = true -- enable auto write
-vim.opt.cmdheight = 1
 vim.opt.confirm = true -- confirm to save changes before exiting modified buffer
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.grepprg = "rg --vimgrep"
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.autoindent = true
+-- vim.opt.smartindent = true
 vim.opt.expandtab = true
-vim.opt.softtabstop = 2
+vim.opt.smarttab = true
+vim.opt.smartcase = true
 
 vim.opt.incsearch = true
 vim.opt.wrap = false
@@ -23,13 +26,6 @@ vim.opt.undofile = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.expandtab = true
-vim.opt.autoindent = true
--- vim.opt.smartindent = true
-vim.opt.smarttab = true
-vim.opt.smartcase = true
 
 vim.wo.signcolumn = 'yes'
 vim.o.number = true

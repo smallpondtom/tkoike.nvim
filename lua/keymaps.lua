@@ -59,5 +59,6 @@ vim.api.nvim_set_keymap("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", 
 vim.api.nvim_set_keymap("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", { noremap = true, silent = true })
 
 -- LSP --
-vim.api.nvim_set_keymap('n', 'gm', "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap=true, silent=true })
-vim.api.nvim_set_keymap('n', '<C-s>', "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap=true, silent=true })
+vim.api.nvim_set_keymap('n', 'gm', "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-s>', "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, { noremap = true, silent = true })
