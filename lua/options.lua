@@ -26,7 +26,6 @@ vim.opt.undofile = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
-
 vim.wo.signcolumn = 'yes'
 vim.o.number = true
 vim.wo.number = true

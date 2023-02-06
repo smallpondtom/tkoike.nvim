@@ -37,7 +37,7 @@ require("lazy").setup({
     lazy = true, -- every plugin is lazy-loaded by default
     version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "kanagawa" } },
+  install = { colorscheme = { "tokyonight" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
@@ -123,3 +123,4 @@ vim.diagnostic.config({
 vim.api.nvim_command([[
   autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 ]])
+
