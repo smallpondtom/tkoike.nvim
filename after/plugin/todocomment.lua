@@ -10,9 +10,10 @@ require("todo-comments").setup {
             -- signs = false, -- configure signs for some keywords individually
         },
         TODO = { icon = " ", color = "info" },
-        HACK = { icon = " ", color = "warning" },
+        HACK = { icon = " ", color = "hack" },
         WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-        PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+        DEBUG = { icon = " ", color = "debug" },
+        PERF = { icon = " ", color = "performance", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
         NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
         TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
     },
@@ -45,7 +46,10 @@ require("todo-comments").setup {
         info = { "DiagnosticInfo", "#2563EB" },
         hint = { "DiagnosticHint", "#10B981" },
         default = { "Identifier", "#7C3AED" },
-        test = { "Identifier", "#FF00FF" }
+        test = { "#900C3F" },
+        debug = { "#FF81D0" },
+        performance = { "#68C711" },
+        hack = { "#F3F62C" }
     },
     search = {
         command = "rg",
@@ -63,3 +67,11 @@ require("todo-comments").setup {
     },
 }
 
+-- FIX:
+-- TODO:
+-- HACK:
+-- WARN:
+-- DEBUG:
+-- PERF:
+-- NOTE:
+-- TEST:
