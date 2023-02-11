@@ -47,6 +47,7 @@ vim.opt.cmdheight = 2
 vim.opt.showtabline = 2
 vim.opt.showmode = true
 vim.opt.cursorline = true
+vim.opt.laststatus = 3
 
 -- vim.cmd("highlight Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold")
 vim.opt.ignorecase = true
