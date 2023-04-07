@@ -59,6 +59,9 @@ require("lazy").setup({
 -- Faster loading of Neovim --
 require("impatient")
 
+require('mason').setup()
+require('mason-lspconfig').setup()
+
 -- LSP --
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
@@ -87,8 +90,6 @@ vim.diagnostic.config({
 -- Configure LSP servers -- 
 -- require('lsp-zero').extend_lspconfig()
 --
--- require('mason').setup()
--- require('mason-lspconfig').setup()
 --
 -- local get_servers = require('mason-lspconfig').get_installed_servers
 -- for _, server_name in ipairs(get_servers()) do

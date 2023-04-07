@@ -92,7 +92,7 @@ return {
     { "folke/neodev.nvim" },
 
     -- Git --
-    { "tpope/vim-fugitive" },
+    { "tpope/vim-fugitive" , lazy=false},
     { "lewis6991/gitsigns.nvim" },
 
     -- UI --
@@ -106,7 +106,7 @@ return {
 
     -- Other --
     { "numToStr/Comment.nvim" },
-    { "mbbill/undotree" },
+    { "mbbill/undotree" , lazy=false},
     { "folke/zen-mode.nvim" },
     { "ThePrimeagen/harpoon" },
     { "kylechui/nvim-surround" },
