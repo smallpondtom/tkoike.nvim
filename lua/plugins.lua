@@ -6,11 +6,11 @@ return {
         -- priority = 1000, -- make sure to load this before all the other start plugins
         -- config = function()
         --     vim.cmd([[colorscheme kanagawa]])
-        -- end,
+        -- }end,
     },
     {
         "folke/tokyonight.nvim",
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        lazy = false,    -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             require("tokyonight").setup({
@@ -20,13 +20,13 @@ return {
                     floats = "transparent"
                 },
                 on_highlights = function(hl, colors)
-                hl.LineNr = {
-                  fg = colors.yellow
-                }
-                hl.CursorLineNr = {
-                  fg = colors.yellow
-                }
-            end
+                    hl.LineNr = {
+                        fg = colors.yellow
+                    }
+                    hl.CursorLineNr = {
+                        fg = colors.yellow
+                    }
+                end
             })
             vim.cmd([[colorscheme tokyonight]])
         end,
@@ -41,6 +41,22 @@ return {
         --     })
         --     require('onedark').load()
         --     vim.cmd([[colorscheme onedark]])
+        -- end,
+    },
+    {
+        "Abstract-IDE/Abstract-cs",
+        -- lazy = false,
+        -- priority = 1000,
+        -- config = function()
+        --     vim.cmd([[colorscheme abscs]])
+        -- end,
+    },
+    {
+        "tiagovla/tokyodark.nvim",
+        -- lazy = false,
+        -- priority = 1000,
+        -- config = function()
+        --     vim.cmd([[colorscheme tokyodar]])
         -- end,
     },
 
@@ -71,20 +87,20 @@ return {
         branch = "v1.x",
         dependencies = {
             -- LSP Support
-            'neovim/nvim-lspconfig', -- Required
-            'williamboman/mason.nvim', -- Optional
+            'neovim/nvim-lspconfig',             -- Required
+            'williamboman/mason.nvim',           -- Optional
             'williamboman/mason-lspconfig.nvim', -- Optional
 
             -- Autocompletion
-            'hrsh7th/nvim-cmp', -- Required
-            'hrsh7th/cmp-nvim-lsp', -- Required
-            'hrsh7th/cmp-buffer', -- Optional
-            'hrsh7th/cmp-path', -- Optional
+            'hrsh7th/nvim-cmp',         -- Required
+            'hrsh7th/cmp-nvim-lsp',     -- Required
+            'hrsh7th/cmp-buffer',       -- Optional
+            'hrsh7th/cmp-path',         -- Optional
             'saadparwaiz1/cmp_luasnip', -- Optional
-            'hrsh7th/cmp-nvim-lua', -- Optional
+            'hrsh7th/cmp-nvim-lua',     -- Optional
 
             -- Snippets
-            'L3MON4D3/LuaSnip', -- Required
+            'L3MON4D3/LuaSnip',             -- Required
             'rafamadriz/friendly-snippets', -- Optional
         }
     },
@@ -92,7 +108,7 @@ return {
     { "folke/neodev.nvim" },
 
     -- Git --
-    { "tpope/vim-fugitive" , lazy=false},
+    { "tpope/vim-fugitive",         lazy = false },
     { "lewis6991/gitsigns.nvim" },
 
     -- UI --
@@ -106,7 +122,7 @@ return {
 
     -- Other --
     { "numToStr/Comment.nvim" },
-    { "mbbill/undotree" , lazy=false},
+    { "mbbill/undotree",          lazy = false },
     { "folke/zen-mode.nvim" },
     { "ThePrimeagen/harpoon" },
     { "kylechui/nvim-surround" },
@@ -115,19 +131,30 @@ return {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("todo-comments").setup{}
+            require("todo-comments").setup {}
         end,
     },
     { "lewis6991/impatient.nvim" },
     { "folke/trouble.nvim" },
-    { -- intall with npm
+    {
+      -- intall with npm
         "iamcco/markdown-preview.nvim",
         build = "cd app && npm install",
         init = function()
             vim.g.mkdp_filetypes = { "markdown" }
         end,
         ft = { "markdown" },
+        version = "*",
     },
     { "lukas-reineke/indent-blankline.nvim" },
-}
 
+    -- Copilot --
+    { "github/copilot.vim", lazy=false },
+
+    -- MatchParen --
+    {
+        "HiPhish/nvim-ts-rainbow2",
+        lazy = false,
+        version = "*",
+    }
+}

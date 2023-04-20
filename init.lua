@@ -29,13 +29,13 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " " -- make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup({
-  spec = {
-    -- import/override with your plugins
+spec = {
+-- import/override with your plugins
     { import = "plugins" },
   },
   defaults = {
     lazy = true, -- every plugin is lazy-loaded by default
-    version = "*", -- try installing the latest stable version for plugins that support semver
+    -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight" } },
   checker = { enabled = true }, -- automatically check for plugin updates
@@ -58,7 +58,6 @@ require("lazy").setup({
 
 -- Faster loading of Neovim --
 require("impatient")
-
 require('mason').setup()
 require('mason-lspconfig').setup()
 

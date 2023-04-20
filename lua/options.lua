@@ -53,3 +53,6 @@ vim.opt.laststatus = 3
 vim.opt.ignorecase = true
 vim.cmd("set formatoptions-=cro")
 
+vim.g.loaded_matchparen = 1
+
+vim.cmd([[set mps+=":"]])
