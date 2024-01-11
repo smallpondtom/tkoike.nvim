@@ -32,7 +32,7 @@ Personal Neovim config version 2 (2024 edition).
         - [x] `mini.surround`
         - [x] `mini.comment`
         - [ ] `mini.align`  (**optional** install ad-hoc)
-        - [ ] `nvim-bqf'  (**optional**)
+        - [ ] `nvim-bqf`  (**optional**)
         - [x] `vim-visual-multi`
         - [x] `vim-easymotion`
     - Git Integration
