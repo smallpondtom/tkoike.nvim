@@ -1,63 +1,81 @@
-### Personal Minimal Neovim Config
+# Neovim Config
 
----
+Personal Neovim config version 2 (2024 edition).
 
-##### Programming Languages
-- Julia
-- Python
-- C/C++
-- Lua
-- Rust
-- Haskell
-- (Matlab)
-
-##### Plugins
-- Plugin Manager: [Lazy.nvim](https://github.com/folke/lazy.nvim)
-- Colorscheme
-  - [kanagawa](https://github.com/rebelot/kanagawa.nvim)
-  - [onedark](https://github.com/navarasu/onedark.nvim)
-  - [tokyonight](https://github.com/tiagovla/tokyodark.nvim)
-- Treesitter: [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- LSP:
-  - [lsp-zero](https://github.com/VonHeikemen/lsp-zero.nvim)
-  - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-  - [mason](https://github.com/williamboman/mason.nvim)
-  - [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
-  - [fidget](https://github.com/j-hui/fidget.nvim)
-  - [neodev](https://github.com/folke/neodev.nvim)
-- Autocompletion:
-  - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-  - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
-  - [cmp-path](https://github.com/hrsh7th/cmp-path)
-  - [cmp-luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
-  - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
-  - [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)
-  - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-  - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
-- FuzzyFinder:
-  - [plenary](https://github.com/nvim-lua/plenary.nvim)
-  - [telescope](https://github.com/nvim-telescope/telescope.nvim)
-  - [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
-- Git:
-  - [vim-fugitive](https://github.com/tpope/vim-fugitive)
-  - [git-signs](https://github.com/lewis6991/gitsigns.nvim)
-- Improve Editing Experience
-  - [undotree](https://github.com/mbbill/undotree)
-  - [nvim-surround](https://github.com/kylechui/nvim-surround)
-  - [nvim-autopair](https://github.com/windwp/nvim-autopairs)
-  - [zen-mode](https://github.com/folke/zen-mode.nvim)
-  - [harpoon](https://github.com/ThePrimeagen/harpoon)
-  - [comment](https://github.com/numToStr/Comment.nvim)
-  - [todo-comments](https://github.com/folke/todo-comments.nvim)
-  - [trouble](https://github.com/folke/trouble.nvim)
-  - [markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
-  - [github-copilot](https://github.com/github/copilot.vim)
-  - [impatient](https://github.com/lewis6991/impatient.nvim)
-  - [nvim-indentline](https://github.com/lukas-reineke/indent-blankline.nvim)
+## Ingredients
+- Plugin Manager
+    - [x] `lazy.nvim`
+- Colorschemes
+    - [x] tokyonight
+    - [x] kanagawa
+    - [x] gruvbox
+- LSP
+    - [x] `mason.nvim`
+    - [x] `nvim-lspconfig`
+    - [x] `mason-lspconfig.nvim`
+    - [x] `lsp-zero.nvim`
+- TreeSitter
+    - [x] `nvim-treesitter`
+- Coding
+    - Autocompletion
+        - [x] `cmp-nvim-lsp`
+        - [x] `nvim-cmp`
+        - [x] `LuaSnip`
+        - [x] `cmp-nvim-lua`
+        - [x] `cmp-buffer`
+        - [x] `cmp-path`
+        - [x] `cmp-luasnip`
+        - [x] `friendly-snippets`
+    - Productivity
+        - [x] `Copilot.lua`  (**attention** not copilot.vim)
+        - [x] `mini.pairs`
+        - [x] `mini.surround`
+        - [x] `mini.comment`
+        - [ ] `mini.align`  (**optional** install ad-hoc)
+        - [ ] `nvim-bqf'  (**optional**)
+        - [x] `vim-visual-multi`
+        - [x] `vim-easymotion`
+    - Git Integration
+        - [x] `fugitive.vim`
+        - [x] `gitsigns.nvim`
+        - [ ] `diffview.nvim` (**optional**)
+    - Search
+        - [x] `telescope.nvim`
+        - [x] `telescope-fzf-native.nvim`
+        - [x] `telescope-live-grep-args.nvim`
+        - [x] `telescope-undo`
+        - [x] `nvim-neoclip.lua`
+        - [ ] `nvim-spectre`  (**optional** since I can use :cdo)
+    - Formatting
+        - [x] `conform.nvim`
+    - Linter
+        - [x] `nvim-lint`
+        - [x] `mason-tool-installer`
+    - Navigation
+        - [ ] `harpoon` (note: harpoon2) (**optional** since I want to get used to jumplist first)
+    - Diagnostics
+        - [ ] `trouble.nvim`  (**optional**)
+    - Debugging (Julia does not have neovim debugging support **yet**)
+        - [ ] `nvim-dap`
+        - [ ] `nvim-dpa-ui`
+        - [ ] `nvim-dap-virtual-text`
+        - [ ] `mason-nvim-dap.nvim`
+    - REPL Integration
+        - [x] `vim-slime`
+        - [x] `vim-slime-cells`
 - UI
-  - [lualine](https://github.com/nvim-lualine/lualine.nvim)
-  - [barbar](https://github.com/romgrk/barbar.nvim)
-  - [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
-  - [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-  
+    - [x] `nvim-notify`
+    - [x] `nvim-web-devicons`
+    - [x] `bufferline.nvim`
+    - [x] `lualine.nvim`
+    - [x] `indent-blankline.nvim`
+- Utilities
+    - [x] `plenary.nvim`
+    - [x] `neodev.nvim`
+    - [x] `markdown-preview.nvim`
+- Language Specific
+    - Juila
+        - [x] `julia-vim`
+        - [x] `JuliaFormatter.vim`  (`julials` does not seem to work)
+
 

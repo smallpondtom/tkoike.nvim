@@ -1,161 +1,179 @@
 return {
-    -- Colorschemes --
+    -- Colorschemes
     {
         "rebelot/kanagawa.nvim",
-        -- lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        -- priority = 1000, -- make sure to load this before all the other start plugins
-        -- config = function()
-        --     vim.cmd([[colorscheme kanagawa]])
-        -- }end,
-    },
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,    -- make sure we load this during startup if it is your main colorscheme
-        priority = 1000, -- make sure to load this before all the other start plugins
-        config = function()
-            require("tokyonight").setup({
-                transparent = true,
-                styles = {
-                    sidebars = "transparent",
-                    floats = "transparent"
-                },
-                on_highlights = function(hl, colors)
-                    hl.LineNr = {
-                        fg = colors.yellow
-                    }
-                    hl.CursorLineNr = {
-                        fg = colors.yellow
-                    }
-                end
-            })
-            vim.cmd([[colorscheme tokyonight]])
-        end,
-    },
-    {
-        "navarasu/onedark.nvim",
-        -- lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        -- priority = 1000, -- make sure to load this before all the other start plugins
-        -- config = function()
-        --     require('onedark').setup({
-        --         style = 'deep'
-        --     })
-        --     require('onedark').load()
-        --     vim.cmd([[colorscheme onedark]])
-        -- end,
-    },
-    {
-        "Abstract-IDE/Abstract-cs",
-        -- lazy = false,
-        -- priority = 1000,
-        -- config = function()
-        --     vim.cmd([[colorscheme abscs]])
-        -- end,
-    },
-    {
-        "tiagovla/tokyodark.nvim",
-        -- lazy = false,
-        -- priority = 1000,
-        -- config = function()
-        --     vim.cmd([[colorscheme tokyodar]])
-        -- end,
-    },
-
-    -- Fuzzy Finder --
-    {
-        "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        lazy = false
-    },
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make"
-    },
-
-    -- Treesitter --
-    {
-        "nvim-treesitter/nvim-treesitter",
         lazy = false,
-        build = function()
-            pcall(require("nvim-treesitter.install").update { with_sync = true })
-        end,
-    },
-
-    -- Autocompletion & LSP --
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        lazy = false,
-        branch = "v1.x",
-        dependencies = {
-            -- LSP Support
-            'neovim/nvim-lspconfig',             -- Required
-            'williamboman/mason.nvim',           -- Optional
-            'williamboman/mason-lspconfig.nvim', -- Optional
-
-            -- Autocompletion
-            'hrsh7th/nvim-cmp',         -- Required
-            'hrsh7th/cmp-nvim-lsp',     -- Required
-            'hrsh7th/cmp-buffer',       -- Optional
-            'hrsh7th/cmp-path',         -- Optional
-            'saadparwaiz1/cmp_luasnip', -- Optional
-            'hrsh7th/cmp-nvim-lua',     -- Optional
-
-            -- Snippets
-            'L3MON4D3/LuaSnip',             -- Required
-            'rafamadriz/friendly-snippets', -- Optional
-        }
-    },
-    { "j-hui/fidget.nvim" },
-    { "folke/neodev.nvim" },
-
-    -- Git --
-    { "tpope/vim-fugitive",         lazy = false },
-    { "lewis6991/gitsigns.nvim" },
-
-    -- UI --
-    { "nvim-tree/nvim-web-devicons" },
-    {
-        "nvim-tree/nvim-tree.lua",
-        version = "nightly"
-    },
-    { "nvim-lualine/lualine.nvim" },
-    { "romgrk/barbar.nvim" },
-
-    -- Other --
-    { "numToStr/Comment.nvim" },
-    { "mbbill/undotree",          lazy = false },
-    { "folke/zen-mode.nvim" },
-    { "ThePrimeagen/harpoon" },
-    { "kylechui/nvim-surround" },
-    { "windwp/nvim-autopairs" },
-    {
-        "folke/todo-comments.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        priority = 1000,
         config = function()
-            require("todo-comments").setup {}
+            vim.cmd.colorscheme 'kanagawa'
         end,
     },
-    { "lewis6991/impatient.nvim" },
-    { "folke/trouble.nvim" },
+	{ "folke/tokyonight.nvim" },
+    { "ellisonleao/gruvbox.nvim" },
+
+    -- Utilities
+    { "nvim-lua/plenary.nvim" },
+    { "folke/neodev.nvim", opts = {} },
     {
-      -- intall with npm
-        "iamcco/markdown-preview.nvim",
-        version = "*",
+    "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         build = "cd app && npm install",
         init = function()
             vim.g.mkdp_filetypes = { "markdown" }
         end,
         ft = { "markdown" },
-        version = "*",
     },
-    { "lukas-reineke/indent-blankline.nvim" },
 
-    -- Copilot --
-    { "github/copilot.vim", lazy=false },
-
-    -- MatchParen --
+    -- LSP
     {
-        "HiPhish/nvim-ts-rainbow2",
-        lazy = false,
-        version = "*",
-    }
+        'williamboman/mason.nvim',
+        dependencies = {
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+        },
+    },
+    { 'williamboman/mason-lspconfig.nvim' },
+    { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
+    { 'neovim/nvim-lspconfig' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+
+    -- Autocompletion
+    {
+        'hrsh7th/nvim-cmp',
+        event = { "InsertEnter", "CmdlineEnter" },
+    },
+    { "rafamadriz/friendly-snippets" },
+    {
+        'L3MON4D3/LuaSnip',
+        dependencies = { "rafamadriz/friendly-snippets" },
+    },
+    { 'hrsh7th/cmp-nvim-lua' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-path' },
+    { 'saadparwaiz1/cmp_luasnip' },
+
+    -- Treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function ()
+			local configs = require("nvim-treesitter.configs")
+
+			configs.setup({
+				ensure_installed = {
+                    "c", "cpp", "lua", "vim", "vimdoc", "julia", "rust",
+                    "python", "markdown", "json", "html", "yaml", "toml",
+                },
+				sync_install = false,
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end
+	},
+
+    -- Formatting
+    {
+        "stevearc/conform.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+    },
+
+    -- Linter
+    {
+        'mfussenegger/nvim-lint',
+        event = { "BufReadPre", "BufNewFile" },
+    },
+    { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
+
+    -- Productivity
+    { "zbirenbaum/copilot.lua" }, 
+    { 'echasnovski/mini.pairs', version = false },
+    { 'echasnovski/mini.surround', version = false },
+    { 'echasnovski/mini.comment', version = false },
+    { 'mg979/vim-visual-multi' },
+    { 'easymotion/vim-easymotion' },
+
+    -- Git
+    { "lewis6991/gitsigns.nvim" },
+    { "tpope/vim-fugitive", lazy = false },
+
+    -- Search
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+        dependencies = { 
+            {'nvim-lua/plenary.nvim'},
+            {
+                "nvim-telescope/telescope-live-grep-args.nvim",
+                -- This will not install any breaking changes.
+                -- For major updates, this must be adjusted manually.
+                version = "^1.0.0",
+            },
+        },
+    },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    { "debugloop/telescope-undo.nvim" },
+	{
+        "AckslD/nvim-neoclip.lua",
+        requires = {
+            {'nvim-telescope/telescope.nvim'},
+        },
+        config = function()
+            require('neoclip').setup({
+                keys = {
+                    telescope = {
+                        i = {
+                            select = '<cr>',
+                            paste = '<c-P>',
+                            paste_behind = '<c-B>',
+                            replay = '<c-Q>',  -- replay a macro
+                            delete = '<c-D>',  -- delete an entry
+                            edit = '<c-E>',  -- edit an entry
+                            custom = {},
+                        },
+                        n = {
+                            select = '<cr>',
+                            paste = 'P',
+                            --- It is possible to map to more than one key.
+                            -- paste = { 'p', '<c-p>' },
+                            paste_behind = 'B',
+                            replay = 'Q',
+                            delete = 'D',
+                            edit = 'E',
+                            custom = {},
+                        },
+                    },
+                    fzf = {
+                        select = 'default',
+                        paste = 'ctrl-P',
+                        paste_behind = 'ctrl-B',
+                        custom = {},
+                    },
+                },
+            })
+        end,
+    },
+    
+    -- UI
+    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+    },
+    { 'rcarriga/nvim-notify' },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
+    -- Julia
+    { "JuliaEditorSupport/julia-vim" },
+    {
+        'kdheepak/JuliaFormatter.vim',
+        ft = { 'julia' },
+    },
+
+    -- Debugging
+    -- { 'mfussenegger/nvim-dap' },
+    -- { 'rcarriga/nvim-dap-ui' },
+    -- { 'theHamsta/nvim-dap-virtual-text' },
+    -- { "jay-babu/mason-nvim-dap.nvim" },
+
+    -- REPL Dev
+    { 'jpalardy/vim-slime' },
+    { 'klafyvel/vim-slime-cells', ft = {'julia', 'python'} },
 }
