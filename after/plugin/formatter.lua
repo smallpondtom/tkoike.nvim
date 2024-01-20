@@ -4,7 +4,7 @@ require("conform").setup({
 		markdown = { "prettier" },
 		c = { "clang-format" },
 		cpp = { "clang-format" },
-
+        json = { "prettier" },
 		-- Conform will run multiple formatters sequentially
 		python = { "isort", "black" },
 
